@@ -1,6 +1,21 @@
 @font-face {
   font-family: "Cabin";
-  src: url('CabinCondensed-SemiBold.ttf')
+  src: url('CabinCondensed-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: "deftone";
+  src: url('deftone stylus.ttf');
+}
+
+@font-face {
+  font-family: "HIV";
+  src: url('HIVNotRetro-regular.otf');
+}
+
+@font-face {
+  font-family:'Lemon';
+  src: url('Lemon Tuesday.otf');
 }
 
 
@@ -13,6 +28,8 @@
   background:url('background-writing.jpeg');
   background-size:cover;
   background-repeat: no-repeat;
+  background-position: center;
+  z-index:-1;
 }
 
 a {
@@ -20,7 +37,75 @@ a {
   color:inherit;
 }
 
+#center-display div {
+  display:inline-block;
+  padding:5%;
+  padding-left:15%;
+  padding-right:15%;
 
+}
+
+#center-display p:nth-child(1){
+  font-family:"Lemon";
+  font-size:3em;
+}
+
+#center-display p:nth-child(2){
+  font-family: 'HIV';
+  font-size:3.5em;
+  margin-top:0px;
+}
+
+
+
+#center-display {
+  position:absolute;
+  color:white;
+  width:100%;
+  text-align:center;
+  margin: 0 auto;
+  margin-top:calc(10%);
+  background:rgba(0, 0, 0, 0.63);
+}
+#signup-btn {
+  display:inline-block;
+
+}
+#video-btn {
+  display:inline-block;
+}
+
+.button {
+  padding:15px;
+  font-size:25px;
+  padding-left:25px;
+  padding-right:25px;
+  font-family:Cabin;
+  background:black;
+  font-family: "HIV";
+  border:2px solid white;
+  border-radius:4px;
+  color:white;
+  -webkit-transition: all 0.2s; /* Safari */
+  transition: all 0.2s;
+}
+
+.button:hover {
+  color:black;
+  background:white;
+
+}
+
+#page {
+  margin:0px;
+  padding:0px;
+  
+  margin-top:100%;
+  width:100%;
+  height:50px;
+  background:gray;
+  z-index:2;
+}
 
 #navbar {
   width:100%;
@@ -34,6 +119,22 @@ a {
   font-family:'Cabin';
 }
 
+#logo {
+  font-family:"deftone";
+  position:absolute;
+  font-size:30px;
+  -webkit-transition: all 0.25s; /* Safari */
+  transition: all 0.25s;
+  top:0px;
+  left:20px;
+  color:white;
+
+}
+
+#navbar:hover #logo {
+  top:10px;
+}
+
 #navbar:hover {
   height:120px;
   background:rgba(41, 41, 41, 1);
@@ -43,12 +144,14 @@ a {
   top: 80px;
 }
 
-#navbar > div {
+#navbar div {
   opacity:0;
   -webkit-transition: all 0.25s; /* Safari */
   transition: all 0.25s;
 
 }
+
+
 
 #buttons {
   text-align:center;
@@ -57,6 +160,42 @@ a {
   margin-top:0px;
 }
 
+#navbar #signin-btn {
+  top:0px;
+  -webkit-transition: all 0.25s; /* Safari */
+  transition: all 0.25s;
+  opacity:0;
+}
+
+#navbar:hover #signin-btn {
+
+    top:15px;
+    opacity:1;
+}
+
+#signin-btn:hover {
+  background:white;
+  color:black;
+}
+
+#signin-btn a {
+  width:100%;
+  height:100%;
+}
+
+#signin-btn {
+  position:absolute;
+  right:25px;
+  font-size:20px;
+  color:white;
+  background:black;
+  padding:17px;
+  border:3px solid white;
+  border-radius:3px;
+  padding-bottom:7px;
+  padding-top:7px;
+
+}
 #buttons > ul {
   list-style: none;
   margin-top:0px;
@@ -68,11 +207,18 @@ a {
 #navbar:hover #buttons ul {
   margin-top:35px;
 }
+
+#navbar li:nth-child(n+2)::before {
+  content: '-';
+  margin-left:-35px;
+  position:absolute;
+}
+
 #buttons li {
   display:inline;
-  margin-left:5%;
-  margin-right:5%;
   padding:5px;
+  margin-left:10px;
+  margin-right: 10px;
   padding-left:15px;
   padding-right:15px;
   border-radius:5px;
