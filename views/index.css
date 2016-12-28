@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Cabin";
+  src: url('CabinCondensed-SemiBold.ttf')
+}
+
+
+#background {
+  position: fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:url('background-writing.jpeg');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+
+
+#navbar {
+  width:100%;
+  height:40px;
+  position:fixed;
+  background:rgba(41, 41, 41, 0.8);
+  top:0px;
+  left:0px;
+  -webkit-transition: all 0.25s; /* Safari */
+  transition: all 0.25s;
+  font-family:'Cabin';
+}
+
+#navbar:hover {
+  height:120px;
+  background:rgba(41, 41, 41, 1);
+}
+
+#navbar:hover:before {
+  top: 80px;
+}
+
+#navbar > div {
+  opacity:0;
+  -webkit-transition: all 0.25s; /* Safari */
+  transition: all 0.25s;
+
+}
+
+#buttons {
+  text-align:center;
+  color:white;
+  font-size:25px;
+  margin-top:0px;
+}
+
+#buttons > ul {
+  list-style: none;
+  margin-top:0px;
+  -webkit-transition: all 0.25; /* Safari */
+  transition: all 0.25s;
+}
+
+
+#navbar:hover #buttons ul {
+  margin-top:35px;
+}
+#buttons li {
+  display:inline;
+  margin-left:5%;
+  margin-right:5%;
+  padding:5px;
+  padding-left:15px;
+  padding-right:15px;
+  border-radius:5px;
+  background:rgba(101, 101, 101, 0);
+  -webkit-transition: all 0.2s; /* Safari */
+  transition: all 0.2s;
+}
+#buttons li:hover {
+  background:rgba(101, 101, 101, 1);
+}
+
+#navbar:hover > div {
+  opacity: 1;
+}
+
+#navbar:before {
+  -webkit-transition: all 0.25s; /* Safari */
+  transition: all 0.25s;
+  top:5px;
+  content: "\268C";
+  font-size:25px;
+  width:20px;
+  position:fixed;
+  left: calc(50% - 12.5px);
+  color:orange;
+  margin: 0 auto;
+}
