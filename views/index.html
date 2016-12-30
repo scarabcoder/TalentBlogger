@@ -2,16 +2,29 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Talent Blogger - Home</title>
 </head>
 
 <body>
+  <script>
+  function showVideo(){
+    document.getElementById("video-bg").style.visibility = "visible";
+    document.getElementById("video-bg").style.opacity = "1";
+  }
+  function hideVideo(){
+    document.getElementById("video-bg").style.visibility = "hidden";
+    document.getElementById("video-bg").style.opacity = "0";
+  }
+  </script>
   <div id="background">
     <div id="center-display">
       <div>
         <p>Start your Child's Blog for Free</p>
-        <a href="#" id="signup-btn" class="button">
+        <a href="#form" id="signup-btn" class="button">
           Start Now
         </a>
+        <a href="#" class="button" onclick="showVideo()">Watch The Video</a>
 
       </div>
     </div>
@@ -23,10 +36,7 @@
     <div id="buttons">
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Signup</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Affiliates</a></li>
+        <li><a href="#features">Features</a></li>
       </ul>
     </div>
     <a href="#" id="signin-btn">
@@ -34,9 +44,87 @@
     </a>
   </div>
   <div id="page">
+    <p class="header" id="features">What you can do with <span>Talent Blogger</span>:</p>
+    <div class="feature">
+      <img src="http://placehold.it/400x250">
+      <div>
+        <p class="header1">Feature</p></br>
+        <p>Lorem ipsum dolor sit amet, mutat aeque in est, ei labore patrioque abhorreant mel.
+          Congue dignissim sed et, cu meis mentitum his. Ei pri atomorum inimicus, pri vivendum dissentiunt in.
+          Id mei dicta tollit dignissim, vim ad probo atomorum. Tritani voluptatum eam eu, equidem moderatius concludaturque ius ut.
+          Te cum iriure epicurei percipit, eam option numquam scriptorem ut.
+          Elit vidisse voluptatum eos ei, harum luptatum vel in, brute phaedrum referrentur ut eos.
+        </p>
+      </div>
+    </div>
 
-  </div>
-</body>
+    <div class="feature">
+      <img src="http://placehold.it/400x250">
+      <div>
+        <p class="header1">Feature</p></br>
+        <p>Lorem ipsum dolor sit amet, mutat aeque in est, ei labore patrioque abhorreant mel.
+          Congue dignissim sed et, cu meis mentitum his. Ei pri atomorum inimicus, pri vivendum dissentiunt in.
+          Id mei dicta tollit dignissim, vim ad probo atomorum. Tritani voluptatum eam eu, equidem moderatius concludaturque ius ut.
+          Te cum iriure epicurei percipit, eam option numquam scriptorem ut.
+          Elit vidisse voluptatum eos ei, harum luptatum vel in, brute phaedrum referrentur ut eos.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <img src="http://placehold.it/400x250">
+      <div>
+        <p class="header1">Feature</p></br>
+        <p>Lorem ipsum dolor sit amet, mutat aeque in est, ei labore patrioque abhorreant mel.
+          Congue dignissim sed et, cu meis mentitum his. Ei pri atomorum inimicus, pri vivendum dissentiunt in.
+          Id mei dicta tollit dignissim, vim ad probo atomorum. Tritani voluptatum eam eu, equidem moderatius concludaturque ius ut.
+          Te cum iriure epicurei percipit, eam option numquam scriptorem ut.
+          Elit vidisse voluptatum eos ei, harum luptatum vel in, brute phaedrum referrentur ut eos.
+        </p>
+      </div>
+    </div>
+    <p class="header">What are you waiting for? Sign up and start a blog now!</p>
+    <div id="form">
+    <form>
+        <input type="text" placeholder="Email" class="text">
+
+        <input type="text" placeholder="Password" class="text">
+
+        <input type="checkbox" checked id="newsletter"><span id="news-text"><span>Yes</span>, I want to recieve monthly emails about blogging.</span>
+
+        <button>Signup</button>
+      </form>
+    </div>
+    </div>
+
+
+
+    <div id="video-bg">
+      <a href="#" onclick="hideVideo()">✖</a>
+      <div>
+        <div id="vid-wrapper">
+          <iframe id="video" src="https://www.youtube.com/embed/ScMzIvxBSi4?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+  $(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+  </script>
+
 
 
 </html>
