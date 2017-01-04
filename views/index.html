@@ -3,6 +3,9 @@
 <head>
   <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="ism/css/my-slider.css"/>
+    <script src="ism/js/ism-2.2.min.js"></script>
+
     <title>Talent Blogger - Home</title>
 </head>
 
@@ -19,14 +22,21 @@
   </script>
   <div id="background">
     <div id="center-display">
-      <div>
-        <p>Start your Child's Blog for Free</p>
-        <a href="#form" id="signup-btn" class="button">
-          Start Now
-        </a>
-        <a href="#" class="button" onclick="showVideo()">Watch The Video</a>
-
+      <p id="header-cover">Start your Child's Blog for Free</p>
+      <div id="left">
+        <p>Signup Below and Start a Blog</p>
+        <form>
+          <input type="text" id="email-box" placeholder="Email">
+          <input type="checkbox" id="newsletter-box" checked><span id="check-box">Sign me up for the newsletter</span>
+          <button class="cover-btn">Signup for Talent Blogger</button>
+          <button class="cover-btn">Remind Me Later</button>
+        </form>
       </div>
+
+      <div id="right">
+        <img src="https://dummyimage.com/400x250">
+      </div>
+
     </div>
   </div>
   <div id="navbar">
@@ -46,7 +56,7 @@
   <div id="page">
     <p class="header" id="features">What you can do with <span>Talent Blogger</span>:</p>
     <div class="feature">
-      <img src="http://placehold.it/400x250">
+      <img src="https://dummyimage.com/400x250">
       <div>
         <p class="header1">Feature</p></br>
         <p>Lorem ipsum dolor sit amet, mutat aeque in est, ei labore patrioque abhorreant mel.
@@ -59,7 +69,7 @@
     </div>
 
     <div class="feature">
-      <img src="http://placehold.it/400x250">
+      <img src="https://dummyimage.com/400x250">
       <div>
         <p class="header1">Feature</p></br>
         <p>Lorem ipsum dolor sit amet, mutat aeque in est, ei labore patrioque abhorreant mel.
@@ -72,7 +82,7 @@
     </div>
 
     <div class="feature">
-      <img src="http://placehold.it/400x250">
+      <img src="https://dummyimage.com/400x250">
       <div>
         <p class="header1">Feature</p></br>
         <p>Lorem ipsum dolor sit amet, mutat aeque in est, ei labore patrioque abhorreant mel.
