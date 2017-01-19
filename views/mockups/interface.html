@@ -1,0 +1,140 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="interface.css">
+  <script src="Chart.js"></script>
+  <script src="progressbar.js"></script>
+  <title>Talent Blogger - Dashboard</title>
+</head>
+
+<body>
+  <div id="left-bar">
+    <p id="logo">Talent Blogger</p>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Students</a></li>
+      <li><a href="#">Preferences</a></li>
+      <li><a href="#">Subscription</a></li>
+    </ul>
+
+
+
+    <a href="#" id="openclose" onclick="toggleClose()">»</a>
+  </div>
+  <div id="content">
+    <p id="page-name">Dashboard</p>
+    <div id="chart">
+      <p class="header">Top Writers</p>
+      <div>
+        <canvas id="lead"></canvas>
+      </div>
+    </div>
+    <div id="recent-posts">
+      <p class="header">Recent Updates</p>
+      <div class="update">
+        <img src="default-avatar.png">
+        <p class="user-name"><span>John</span> published:</p>
+        <p class="synopsis">Lorem ipsum dolor sit amet, inermis oportere consequat sea in, at sit senserit dissentiunt, probo harum everti ut sed.
+           Cu movet altera oporteat vel, tempor.</p>
+        <p class="date">Thursday 3:47 PM</p>
+      </div>
+      <div class="update">
+        <img src="default-avatar.png">
+        <p class="user-name"><span>Sarah</span> published:</p>
+        <p class="synopsis">Lorem ipsum dolor sit amet, inermis oportere consequat sea in, at sit senserit dissentiunt, probo harum everti ut sed.
+           Cu movet altera oporteat vel, tempor.</p>
+        <p class="date">Friday, January 13th</p>
+      </div>
+
+    </div>
+    <br>
+    <div id="goals">
+      <p class="header">Weekly Word Goal Progress</p>
+        <div class="goal">
+          <img src="default-avatar.png"><p class="goal-user">Sarah</p><div id="probar" class="probar"></div> <p class="amount">450/600 words (75%)</p>
+        </div>
+        <div class="goal">
+          <img src="default-avatar.png"><p class="goal-user">John</p><div id="probar2" class="probar"></div> <p class="amount">360/400 words (90%)</p>
+        </div>
+        <div class="goal">
+          <img src="default-avatar.png"><p class="goal-user">Mark</p><div id="probar3" class="probar"></div> <p class="amount">45/150 words (30%)</p>
+        </div>
+    </div>
+    <script>
+
+      var options = {
+        easing: 'easeInOut',
+        to: {color: '#30ef1f'},
+        from: {color: '#e81e1e'},
+        duration: 1400,
+        strokeWidth: 3,
+        trailColor: '#a8a8a8',
+        color: '#FFEA82',
+        svgStyle: {width: '100%', height: '100%'},
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }
+      var bar1 =  new ProgressBar.Line("#probar", options);
+      var bar2 = new ProgressBar.Line("#probar2", options);
+      var bar3 = new ProgressBar.Line("#probar3", options);
+      bar1.animate(0.75);
+      bar2.animate(0.9);
+      bar3.animate(0.3);
+
+      var data = {
+        labels: [
+          "John",
+          "Sarah",
+          "Mark"
+        ],
+        datasets: [
+          {
+            data: [4, 6, 2],
+            backgroundColor: [
+              '#653700',
+              '#01ff07',
+              '#e50000'
+            ],
+            hoverBackgroundColor: [
+                '#653700',
+                '#01ff07',
+                '#e50000'
+            ]
+          }
+        ]
+      }
+      var leadChart = new Chart(document.getElementById("lead"), {
+        type: 'pie',
+        data: data,
+        options: {
+          responsive: true,
+          legend: {
+            labels: {
+              fontSize: 20
+            }
+          }
+
+        }
+      })
+    </script>
+  </div>
+
+  <script>
+    function toggleClose(){
+      var div = document.getElementById("left-bar");
+      if(div.className !== "open"){
+        div.className = "open";
+        document.getElementById("openclose").innerHTML = "«";
+      }else{
+        div.className = "";
+        window.setTimeout(reverse, 150)
+
+      }
+    }
+
+    function reverse(){
+      document.getElementById("openclose").innerHTML = "»";
+
+    }
+  </script>
+
+</body>
